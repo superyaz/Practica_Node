@@ -1,8 +1,13 @@
 const fruits = ["apple", "melon", "mango", function () {
     console.log("Prueba función anónima");
-    return 1;
 }];
 
 console.log(fruits[3]());
 
-const students = new Set();
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+for (let i = 0; i <= fruits.length; i++) {
+    console.log(i);
+}
