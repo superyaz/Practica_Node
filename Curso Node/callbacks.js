@@ -13,6 +13,17 @@ const booksDB = [
     },
 ];
 
+const autor = [
+    {
+        Nombre: "Paulo Cohelo",
+        Ciudad: "Colombia"
+    }
+    {
+        Nombre: "Thomas Carrasquilla",
+        Ciudad: "Peru"
+    }
+]
+
 function getBookById(id, callback) {
     const book = booksDB.find((book) => book.id === id);
     if (!book) {
