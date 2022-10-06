@@ -1,18 +1,33 @@
 const booksDB = [
     {
         id: 1,
-        title: "Clean Code"
+        title: "Clean Code",
+        authorId: 1
     },
     {
         id: 2,
-        title: "The pragmantic programmer"
+        title: "The pragmantic programmer",
+        authorId: 2
     },
     {
         id: 3,
-        title: "Web Development with Node.js"
+        title: "Web Development with Node.js",
+        authorId: 3
     },
 ];
 
+<<<<<<< HEAD
+const authorsDB = [
+    {
+        id: 1,
+        name: "Robert C. Martin"
+    },
+    {
+        id: 2,
+        name: "Steve Forest"
+    }
+];
+=======
 const autor = [
     {
         Nombre: "Paulo Cohelo",
@@ -23,6 +38,7 @@ const autor = [
         Ciudad: "Peru"
     }
 ]
+>>>>>>> origin
 
 function getBookById(id, callback) {
     const book = booksDB.find((book) => book.id === id);
@@ -34,9 +50,26 @@ function getBookById(id, callback) {
     callback(null, book)
 }
 
-getBookById(20, (err, book) => {
+function getAuthorById(id, callback) {
+    const author = authorsDB.find((author) => author.id === id);
+    if (!author) {
+        const error = new Error();
+        error.message = "Author not found!"
+        return callback(error);
+    }
+    callback(null, author)
+}
+
+getBookById(2, (err, book) => {
     if (err) {
         return console.log(err.message);
     }
+
+    getAuthorById(book.authorId, (err, author) => {
+        if (err) {
+            return console.log(err.message);
+        }
+        console.log(`This book ${book.name} was written by ${author.name}`);
+    });
     return console.log(book);
 })
