@@ -16,7 +16,6 @@ const booksDB = [
     },
 ];
 
-<<<<<<< HEAD
 const authorsDB = [
     {
         id: 1,
@@ -27,18 +26,6 @@ const authorsDB = [
         name: "Steve Forest"
     }
 ];
-=======
-const autor = [
-    {
-        Nombre: "Paulo Cohelo",
-        Ciudad: "Colombia"
-    }
-    {
-        Nombre: "Thomas Carrasquilla",
-        Ciudad: "Peru"
-    }
-]
->>>>>>> origin
 
 function getBookById(id, callback) {
     const book = booksDB.find((book) => book.id === id);
